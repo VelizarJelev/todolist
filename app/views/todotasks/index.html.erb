@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<table class="table table-striped table-bordered table-hover" >
+  <thead class="table-dark">
+    <tr>
+      <th>Задача</th>
+      <th>Крайна дата</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @todotasks.each do |todotask| %>
+      <tr>
+        <td><%= todotask.task_name %></td>
+        <td><%= todotask.duedate %></td>
+        <td><%= link_to 'Show', todotask %></td>
+        <td><%= link_to 'Edit', edit_todotask_path(todotask) %></td>
+        <td><%= link_to 'Destroy', todotask, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Todotask', new_todotask_path, class:"btn btn-secondary" %>

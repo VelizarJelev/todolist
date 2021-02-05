@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Задача:</strong>
+  <%= @todotask.task_name %>
+</p>
+
+<p>
+  <strong>Крайна дата:</strong>
+  <%= @todotask.duedate %>
+</p>
+
+<%= link_to 'Edit', edit_todotask_path(@todotask), class:"btn btn-secondary" %>
+<%= link_to 'Back', todotasks_path, class:"btn btn-secondary" %>
